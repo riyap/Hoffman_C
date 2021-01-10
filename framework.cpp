@@ -75,7 +75,7 @@ string lowercase(string s)
     //     s++
     // }
 
-    // char str[] = 
+    // char str[] =
 
     // cout << "LOWER " << s << endl;
     return s;
@@ -92,10 +92,10 @@ void check(string correct_answer, string error_message)
         print(error_message);
         check(correct_answer, error_message);
     }
-    
+
 }
 
-void checkInt (int correct_answer, string error_message) 
+void checkInt (int correct_answer, string error_message)
 {
     int input;
     cin >> input;
@@ -103,8 +103,8 @@ void checkInt (int correct_answer, string error_message)
     {
         print(error_message);
         check(correct_answer, error_message);
-    }    
-} 
+    }
+}
 
 void welcome_message(string name)
 {
@@ -124,7 +124,7 @@ void welcome_message(string name)
 void library()
 {
     //TODO: fill out library plotline here
-    
+
     print_endl("You step into the library.");
     delay(1);
     print_endl("Tacked to the door is a note with three hints: \n");
@@ -191,24 +191,24 @@ void library()
 
 void kitchen()
 {
-    //insert the 2 box images 
-    printendl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole."); 
+    //insert the 2 box images
+    printendl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole.");
     delay(5);
-    
+
     //show 1st box only
     printendl("What does this puzzle say once completed?");
     delay(5);
     check("rose", "Please try again. \n What does this puzzle say once completed?");
-    
+
     // show 2nd box only
     printendl("Nothing seems off with the 2nd box, it only requires a key. \n Do you have a key?");
-    delay(5); 
-    
-    string input; 
-    cin >> input; 
+    delay(5);
+
+    string input;
+    cin >> input;
     if (input == "yes")
     {
-        "What is the inscription on the key?" 
+        "What is the inscription on the key?"
         check("dreams", "Please try again. \n What is the inscription on the key?");
         printendl("Great you solved the puzzle! Please move to another room.");
         // Removing library from the rooms array, l from the keys array, and doing size--
@@ -221,12 +221,12 @@ void kitchen()
     }
     else if (input == "no")
     {
-        printendl("Please go to a new room. This puzzle cannot be solved without the key.");  
+        printendl("Please go to a new room. This puzzle cannot be solved without the key.");
         // Running room_selection so that user can move on to the next room.
         room_selection(rooms, keys, size);
     }
     else
-    {    
+    {
         printendl("Please enter either "yes" or "no" in all LOWERCASE letters.");
     }
 }
@@ -235,20 +235,20 @@ void office_wing()
 {
     printendl("The office is dimly lit, with various stationary scattered across the desks. You take a few pencils, notepads, and paperclips just in case.”);
     delay(7);
-    
+
     //insert image here
-    printendl("In the Office Wing you find a safe with a piece of parchment next to it. It lists the names of many European cities. An idea comes to you."); 
+    printendl("In the Office Wing you find a safe with a piece of parchment next to it. It lists the names of many European cities. An idea comes to you.");
     delay(7);
     printendl("You try connecting the cities on the map, and the lines form a pattern. \n What combination will unlock the safe? Enter answer without spaces:");
     checkInt(427, "Please try again. \n What combination will unlock the safe? Enter answer without spaces:");
-    
+
     //insert image here
     printendl("You enter the combination into the safe.");
-    delay(5);          
-    printendl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal ball, on which there is the inscription 'soul'."); 
-    delay(15); 
-    printendl("You take note of the clue for this room.");  
-    
+    delay(5);
+    printendl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal ball, on which there is the inscription 'soul'.");
+    delay(15);
+    printendl("You take note of the clue for this room.");
+
     // Removing library from the rooms array, l from the keys array, and doing size--
     remove("Office Wing", rooms, size);
     remove("ow", keys, size);
@@ -260,12 +260,29 @@ void office_wing()
 
 void observatory()
 {
-    //TODO: fill out observatory plotline here
+  print_endl("You enter the Observatory.")
+  delay(1);
+  print_endl("You look around the room. Where could the clue be hidden? In the ____.");
 
-    /*
-    At the end of this plotline, remove the observatory from the rooms array, do size--,
-    and run room_selection again so that the user can move on to the next room.
-    */
+
+  check("safe", "You take a closer look, but you can't seem to find anything.\nWhat else can we check inside?");
+
+  //buttons puzzle
+  print_endl("You take a closer look at the safe. There seem to be words carved into the metal under three buttons: Red, Yellow, and Green.");
+  delay(3);
+  //img
+  delay(2);
+  print_endl("In which order do you press them? Enter colors separated by commas.");
+  check("red, yellow, green", "Nothing happens. You try again, this time pressing in the order: ");
+
+  print_endl("The safe opens and you find a piece of parchment with the letter “U” and a peculiar key, with the inscription “Dreams” on its side. These seem to be the room’s clue.");
+  delay(4);
+  print_endl("Which room do you go to next?");
+
+
+  remove("Observatory", rooms, size);
+  size--;
+  room_selection(string next_rooms[], string room_keys[], int array_size);
 }
 
 void gallery()
@@ -329,7 +346,7 @@ void room_selection(string next_rooms[], string room_keys[], int array_size)
         print_endl("That is not a valid room choice. Please select a value from the keys given on the left.");
         room_selection(next_rooms, room_keys, array_size);
     }
-    
+
 }
 
 int main()
@@ -337,7 +354,7 @@ int main()
     string player_name;
     print("Enter player name: ");
     cin >> player_name;
-    
+
     welcome_message(player_name);
     room_selection(rooms, keys, size);
 
