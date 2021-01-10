@@ -189,7 +189,7 @@ void kitchen()
     delay(5);
     check("rose", "Please try again. \n What does this puzzle say once completed?");
 
-    //IMAGE 2nd box only 
+    //IMAGE 2nd box only
     printendl("Nothing seems off with the 2nd box, it only requires a key. \n Do you have a key?");
     delay(5);
 
@@ -199,7 +199,7 @@ void kitchen()
     {
         "What is the inscription on the key?"
         check("dreams", "Please try again. \n What is the inscription on the key?");
-        printendl("Great you solved the puzzle! Please move to another room.");
+        print_endl("Great you solved the puzzle! Please move to another room.");
         // Removing library from the rooms array, l from the keys array, and doing size--
         remove("Kitchen", rooms, size);
         remove("k", keys, size);
@@ -210,33 +210,33 @@ void kitchen()
     }
     else if (input == "no")
     {
-        printendl("Please go to a new room. This puzzle cannot be solved without the key.");
+        print_endl("Please go to a new room. This puzzle cannot be solved without the key.");
         // Running room_selection so that user can move on to the next room.
         room_selection(rooms, keys, size);
     }
     else
     {
-        printendl("Please enter either "yes" or "no" in all LOWERCASE letters.");
+        print_endl("Please enter either "yes" or "no" in all LOWERCASE letters.");
     }
 }
 
 void office_wing()
 {
-    printendl("The office is dimly lit, with various stationary scattered across the desks. You take a few pencils, notepads, and paperclips just in case.”);
+    print_endl("The office is dimly lit, with various stationary scattered across the desks. You take a few pencils, notepads, and paperclips just in case.”);
     delay(7);
 
-    //IMAGE
-    printendl("In the Office Wing you find a safe with a piece of parchment next to it. It lists the names of many European cities. An idea comes to you.");
+    //insert image here
+    print_endl("In the Office Wing you find a safe with a piece of parchment next to it. It lists the names of many European cities. An idea comes to you.");
     delay(7);
-    printendl("You try connecting the cities on the map, and the lines form a pattern. \n What combination will unlock the safe? Enter answer without spaces:");
+    print_endl("You try connecting the cities on the map, and the lines form a pattern. \n What combination will unlock the safe? Enter answer without spaces:");
     check("427", "Please try again. \n What combination will unlock the safe? Enter answer without spaces:");
 
-    //IMAGE
-    printendl("You enter the combination into the safe.");
+    //insert image here
+    print_endl("You enter the combination into the safe.");
     delay(5);
-    printendl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal ball, on which there is the inscription 'soul'.");
+    print_endl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal ball, on which there is the inscription 'soul'.");
     delay(15);
-    printendl("You take note of the clue for this room.");
+    print_endl("You take note of the clue for this room.");
 
     // Removing library from the rooms array, l from the keys array, and doing size--
     remove("Office Wing", rooms, size);
@@ -268,20 +268,51 @@ void observatory()
   delay(4);
   print_endl("Which room do you go to next?");
 
-
+// Running room_selection so that user can move on to the next room.
   remove("Observatory", rooms, size);
+  remove("ob", keys, size);
   size--;
   room_selection(string next_rooms[], string room_keys[], int array_size);
 }
 
 void gallery()
 {
-    //TODO: fill out gallery plotline here
+    //TODO: images
+    print_endl("You enter the gallery.");
+    delay(1);
+    print_endl("The gallery is home to the portraits of the heroes of this country.");
+    delay(2);
+    print_endl("Some of the most beautiful portraits are those of Prince Casper, Queen Mary, and Baroness Reagan.");
 
-    /*
-    At the end of this plotline, remove the gallery from the rooms array, do size--,
-    and run room_selection again so that the user can move on to the next room.
-    */
+    //image
+    print_endl("What in this room looks out of the ordinary? The ________");
+    check("envelope", "You check, but nothing is amiss. What else seems unusual?");
+
+    //image
+    print_endl("These are all pictures of animals. Perhaps they can be arranged in a certain order to spell a word.");
+    delay(2);
+    print_endl("What does this clue spell?");
+    check("Reagan", "That arrangement doesn't seem to make sense. Perhaps there's a better answer.");
+    print_endl("You go to the portrait of Baroness Reagan. Slowly, You feel around the corners of the frame.");
+    delay(3);
+    print_endl("Giving a small tug, you stumble back as the frame swings open. There is a hidden storage behind the portrait.");
+    delay(3);
+    print_endl("In it is a piece of parchment with the letter \"U\" and a small metal ball.");
+    delay(1);
+
+    //image
+    delay(2);
+    print_endl("Upon closer inspection, the metal ball has the word \"mind\" inscribed into it.");
+    delay(2);
+    print_endl("Pocketing the ball and paper, you check off the gallery on your map of the castle. This seems to be the room’s clue.");
+    delay(2);
+    print_endl("Where will you go next?");
+
+    // Running room_selection so that user can move on to the next room.
+    remove("Gallery", rooms, size);
+    remove("g", keys, size);
+    size--;
+    room_selection(string next_rooms[], string room_keys[], int array_size);
 }
 
 void parlor()
