@@ -95,17 +95,6 @@ void check(string correct_answer, string error_message)
 
 }
 
-void checkInt (int correct_answer, string error_message)
-{
-    int input;
-    cin >> input;
-    if (input != correct_answer)
-    {
-        print(error_message);
-        check(correct_answer, error_message);
-    }
-}
-
 void welcome_message(string name)
 {
     print_endl("");
@@ -191,16 +180,16 @@ void library()
 
 void kitchen()
 {
-    //insert the 2 box images
+    //IMAGE: 2 boxes
     printendl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole.");
     delay(5);
 
-    //show 1st box only
+    //IMAGE 1st box only
     printendl("What does this puzzle say once completed?");
     delay(5);
     check("rose", "Please try again. \n What does this puzzle say once completed?");
 
-    // show 2nd box only
+    //IMAGE 2nd box only 
     printendl("Nothing seems off with the 2nd box, it only requires a key. \n Do you have a key?");
     delay(5);
 
@@ -236,13 +225,13 @@ void office_wing()
     printendl("The office is dimly lit, with various stationary scattered across the desks. You take a few pencils, notepads, and paperclips just in case.”);
     delay(7);
 
-    //insert image here
+    //IMAGE
     printendl("In the Office Wing you find a safe with a piece of parchment next to it. It lists the names of many European cities. An idea comes to you.");
     delay(7);
     printendl("You try connecting the cities on the map, and the lines form a pattern. \n What combination will unlock the safe? Enter answer without spaces:");
-    checkInt(427, "Please try again. \n What combination will unlock the safe? Enter answer without spaces:");
+    check("427", "Please try again. \n What combination will unlock the safe? Enter answer without spaces:");
 
-    //insert image here
+    //IMAGE
     printendl("You enter the combination into the safe.");
     delay(5);
     printendl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal ball, on which there is the inscription 'soul'.");
