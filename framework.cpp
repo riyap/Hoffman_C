@@ -317,7 +317,26 @@ void gallery()
 
 void parlor()
 {
-    //TODO: fill out parlor plotline here
+    print_endl("You enter the parlor and take a look around.");
+    //image
+    print_endl("There's a strange chest carved into the floor... it seems out of place. Must be part of this horrific game.")
+    //image
+    print_endl("Do you have the pieces to open this box? Y or N?.")
+
+// If no: You are missing some keys! Go find them! Where would you like to go? Kitchen, Office Wing, Observatory, Library, Gallery?
+
+// If yes: 
+// “There are 3 grooves labeled: M, B, and S. What is the inscription on the sphere that fits into the groove labeled ‘M’?” Mind
+// “Which sphere goes into ‘B’?” Body
+// “S?” Soul 
+// “The box opens. Inside you find a piece of parchment with the letter “R”.”
+// [image]
+// “Have you collected clues from all 6 locations on the map? Y or N?”
+// If Y: “You head back to the front door to try the key.”
+// [image]
+// “The door swings open, and you come face-to-face with a cloaked figure” Proceed to Ending
+// If N: chooseRoom()
+
 
     /*
     At the end of this plotline, remove the parlor from the rooms array, do size--,
