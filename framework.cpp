@@ -95,6 +95,17 @@ void check(string correct_answer, string error_message)
     
 }
 
+void checkInt (int correct_answer, string error_message) 
+{
+    int input;
+    cin >> input;
+    if (input != correct_answer)
+    {
+        print(error_message);
+        check(correct_answer, error_message);
+    }    
+} 
+
 void welcome_message(string name)
 {
     print_endl("");
@@ -180,22 +191,71 @@ void library()
 
 void kitchen()
 {
-    //TODO: fill out kitchen plotline here
+    //insert the 2 box images 
+    printendl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole."); 
+    delay(5);
+    
+    //show 1st box only
+    printendl("What does this puzzle say once completed?");
+    delay(5);
+    check("rose", "Please try again. \n What does this puzzle say once completed?");
+    
+    // show 2nd box only
+    printendl("Nothing seems off with the 2nd box, it only requires a key. \n Do you have a key?");
+    delay(5); 
+    
+    string input; 
+    cin >> input; 
+    if (input == "yes")
+    {
+        "What is the inscription on the key?" 
+        check("dreams", "Please try again. \n What is the inscription on the key?");
+        printendl("Great you solved the puzzle! Please move to another room.");
+        // Removing library from the rooms array, l from the keys array, and doing size--
+        remove("Kitchen", rooms, size);
+        remove("k", keys, size);
+        size--;
 
-    /*
-    At the end of this plotline, remove the kitchen from the rooms array, do size--,
-    and run room_selection again so that the user can move on to the next room.
-    */
+        // Running room_selection so that user can move on to the next room.
+        room_selection(rooms, keys, size);
+    }
+    else if (input == "no")
+    {
+        printendl("Please go to a new room. This puzzle cannot be solved without the key.");  
+        // Running room_selection so that user can move on to the next room.
+        room_selection(rooms, keys, size);
+    }
+    else
+    {    
+        printendl("Please enter either "yes" or "no" in all LOWERCASE letters.");
+    }
 }
 
 void office_wing()
 {
-    //TODO: fill out office wing plotline here
+    printendl("The office is dimly lit, with various stationary scattered across the desks. You take a few pencils, notepads, and paperclips just in case.”);
+    delay(7);
+    
+    //insert image here
+    printendl("In the Office Wing you find a safe with a piece of parchment next to it. It lists the names of many European cities. An idea comes to you."); 
+    delay(7);
+    printendl("You try connecting the cities on the map, and the lines form a pattern. \n What combination will unlock the safe? Enter answer without spaces:");
+    checkInt(427, "Please try again. \n What combination will unlock the safe? Enter answer without spaces:");
+    
+    //insert image here
+    printendl("You enter the combination into the safe.");
+    delay(5);          
+    printendl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal ball, on which there is the inscription 'soul'."); 
+    delay(15); 
+    printendl("You take note of the clue for this room.");  
+    
+    // Removing library from the rooms array, l from the keys array, and doing size--
+    remove("Office Wing", rooms, size);
+    remove("ow", keys, size);
+    size--;
 
-    /*
-    At the end of this plotline, remove the office wing from the rooms array, do size--,
-    and run room_selection again so that the user can move on to the next room.
-    */
+    // Running room_selection so that user can move on to the next room.
+    room_selection(rooms, keys, size);
 }
 
 void observatory()
