@@ -318,32 +318,70 @@ void gallery()
 void parlor()
 {
     print_endl("You enter the parlor and take a look around.");
-    //image
-    print_endl("There's a strange chest carved into the floor... it seems out of place. Must be part of this horrific game.")
-    //image
-    print_endl("Do you have the pieces to open this box? Y or N?.")
-
-// If no: You are missing some keys! Go find them! Where would you like to go? Kitchen, Office Wing, Observatory, Library, Gallery?
-
-// If yes: 
-// “There are 3 grooves labeled: M, B, and S. What is the inscription on the sphere that fits into the groove labeled ‘M’?” Mind
-// “Which sphere goes into ‘B’?” Body
-// “S?” Soul 
-// “The box opens. Inside you find a piece of parchment with the letter “R”.”
-// [image]
-// “Have you collected clues from all 6 locations on the map? Y or N?”
-// If Y: “You head back to the front door to try the key.”
-// [image]
-// “The door swings open, and you come face-to-face with a cloaked figure” Proceed to Ending
-// If N: chooseRoom()
-
-
-    /*
-    At the end of this plotline, remove the parlor from the rooms array, do size--,
-    and run room_selection again so that the user can move on to the next room.
-    */
+    //image of parlor
+    delay(2);
+    print_endl("There's a strange chest carved into the floor...");
+    //image of box
+    print_endl("Looks like the three grooves labled \"M\", \"B\", and \"S\"need to be filled to open it. "
+    print_endl("What can be used to open the box? _____ _____")
+    check("metal balls", "No, that doesn't seem to make sense. Try again.");
+    print_endl("Do you have the three metal balls required to open this box?");
+    
+    string input;
+    cin >> input;
+    if (input == "yes")
+    {
+        print_endl("Which sphere goes in the spot labeled \"M\"?");
+        check("mind", "You try that metal ball, but it doesn't seem to work. Try another one.");
+        print_endl("Which sphere goes in the spot labeled \"B\"?");
+        check("body", "You try that metal ball, but it doesn't seem to work. Try another one.");
+        print_endl("Which sphere goes in the spot labeled \"S\"?");
+        check("soul", "You try that metal ball, but it doesn't seem to work. Try another one.");
+        //image of box with balls
+        print_endl("CLICK!");
+        delay(2);
+        print_endl("You hear the box unlock. Inside you find a key and piece of parchment with the letter \"R\".");
+        //image of open box
+        delay(5);
+        print_endl("Have you collected clues from all 6 locations on the map?");
+        
+        string input2;
+        cin >> input2;
+        if (input2 == "yes")
+        {
+            print_endl("This key must be the one to unlock the front doors!You run to go try it!");
+            //image of front door
+            print_endl("The door swings open, and you come face-to-face with a cloaked figure.");
+            //image of figure
+            //PROCEED TO THE ENDING WHERE IS IT AT??
+        }
+        
+        else if (input2 == "no")
+        {
+            print_endl("Please visit all the other rooms.");
+            // Running room_selection so that user can move on to the next room.
+            room_selection(rooms, keys, size);
+        }
+        else
+        {
+            print_endl("Please enter either \"yes\" or \"no\" in all LOWERCASE letters.");
+        }    
+      
+    }
+    else if (input == "no")
+    {
+        print_endl("Please go to a new room. This box cannot be opened without all three metal balls.");
+        // Running room_selection so that user can move on to the next room.
+        room_selection(rooms, keys, size);
+    }
+    else
+    {
+        print_endl("Please enter either \"yes\" or \"no\" in all LOWERCASE letters.");
+    }    
 }
-
+                           
+//method for ending
+               
 void room_selection(string next_rooms[], string room_keys[], int array_size)
 {
     print_endl("Which room would you like to enter?");
