@@ -232,8 +232,14 @@ void kitchen()
     delay(5);
 
     //IMAGE 1st box only
-    print_endl("What does this puzzle say once completed? _ _ _ _ ");
+    print_endl("Next to the first box is a riddle, saying:");
+    delay(3);
+    print_endl("Though my beauty is becoming, I can hurt you just the same.\nI come in many colors, many give me to their flames.");
+    delay(6);
+    print_endl("What is the answer to the riddle? _ _ _ _ ");
     check("rose", "Please try again. \n What does this puzzle say once completed? _ _ _ _ ");
+    print_endl("You rotate the dials on the box to spell out \"rose\", and the lid clicks open.");
+    delay(4);
 
     //IMAGE 2nd box only
     print_endl("Nothing seems off with the 2nd box, it only requires a key. \nDo you have a key that is star-shaped?");
@@ -246,7 +252,9 @@ void kitchen()
     {
         print_endl("What is the inscription on the key? _ _ _ _ _ ");
         check("dreams", "Please try again. \n What is the inscription on the key? _ _ _ _ _ ");
-        print_endl("Great, you solved the puzzle! It's time to move to another room.");
+        print_endl("Looking inside both boxes, you take out a metal sphere with the inscription 'body' and a parchment paper with the letter 'F'.");
+        delay(6);
+        print_endl("These seem to be the clues for this room, so you decide to move on.");
         // Removing library from the rooms array, l from the keys array, and doing size--
         // remove("Kitchen", rooms, size);
         // remove("k", keys, size);
@@ -254,7 +262,7 @@ void kitchen()
 
         // Running room_selection so that user can move on to the next room.
         STATUS[1] = 1;
-        delay(4);
+        delay(3);
         room_selection(rooms, keys, SIZE);
     }
     else if (input == "N")
