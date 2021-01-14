@@ -203,7 +203,7 @@ void library()
     print_endl("\nWhy are there no words on this paper? (one word)");
     print("The words are _ _ _ _ _ _ _ _ _. ");
 
-    check("invisible", "\nNo, that's not right. Why are there no words on the paper? \nThe words are _ _ _ _ _ _ _ _ _.");
+    check("invisible", "\nNo, that's not right. Why are there no words on the paper? \nThe words are _ _ _ _ _ _ _ _ _. ");
 
     print_endl("\nThe words are invisible!");
     delay(2);
@@ -426,6 +426,7 @@ void gallery()
     delay(3);
     //image
     print_endl("What in this room looks out of the ordinary? The _ _ _ _ _ _ _ _. ");
+    print_endl("https://photos.app.goo.gl/kr74mSXtLE3XXxyeA");
     check("envelope", "You check, but nothing is amiss. \nWhat else seems unusual, like it isn't supposed to be part of this room?\nThe _ _ _ _ _ _ _ _. ");
 
     //image
@@ -434,7 +435,7 @@ void gallery()
     print_endl("These are all pictures of animals. Perhaps they can be arranged in a certain order to spell a word.");
     delay(2);
     print_endl("What does this clue spell? ");
-    check("reagan", "That arrangement doesn't seem to make sense. Perhaps there's a better answer.");
+    check("reagan", "That arrangement doesn't seem to make sense. Perhaps there's a better answer. ");
     print_endl("\nYou go to the portrait of Baroness Reagan. Slowly, You feel around the corners of the frame.");
     print_endl("https://photos.app.goo.gl/RNCgtBWw5CogiU219");
     delay(10);
@@ -450,7 +451,7 @@ void gallery()
     delay(3);
     print_endl("Pocketing the sphere and paper, you check off the gallery on your map of the castle. This seems to be the room’s clue.");
     delay(4);
-    print_endl("\"mind\" sphere and \"U\" parchment added to bag.")
+    print_endl("\"mind\" sphere and \"U\" parchment added to bag.");
     delay(1);
     bag[bagStorage] = "\"mind\" sphere and \"U\" parchment";
     bagStorage++;
@@ -485,17 +486,17 @@ void parlor()
         //image of box
         print_endl("\nLooks like the three grooves labled \"M\", \"B\", and \"S\" need to be filled to open it.");
         print_endl("\nWhat can be used to open the box? \n(Hint: what have you been collecting from the rooms you visited?)\nInstead of a space, split the two words with a '-': _ _ _ _ _-_ _ _ _ _ _ _ ");
-        check("metal-spheres", "No, that doesn't seem to make sense. Try again.\nWhat can be used to open the box? _ _ _ _ _ -_ _ _ _ _ _ _ ");
-        print_endl("\nDo you have the three metal spheres required to open this box? Enter 'Y' or 'N': ");
+        check("metal-spheres", "No, that doesn't seem to make sense. Try again.\nWhat can be used to open the box? _ _ _ _ _-_ _ _ _ _ _ _ ");
+        print("\nDo you have the three metal spheres required to open this box? Enter 'Y' or 'N': ");
 
         string input;
         cin >> input;
 
-        while (input != "Y" || input != "N")
-        {
-          print_endl("Please enter either 'Y' or 'N'.");
-          cin >> input;
-        }
+        // while (input != "Y" || input != "N")
+        // {
+        //   print("Please enter either 'Y' or 'N': ");
+        //   cin >> input;
+        // }
 
         if (input == "Y")
         {
@@ -509,6 +510,7 @@ void parlor()
             print_endl("\n*CLICK!*");
             delay(1);
             print_endl("\nYou hear the box unlock. Inside you find a key and piece of parchment with the letter \"R\".");
+            print_endl("https://photos.app.goo.gl/Lh8LX5958Hu1yd6U9");
             //image of open box
             delay(10);
             print_endl("Have you collected clues from all 6 locations on the map? Enter 'Y' or 'N': ");
@@ -516,11 +518,11 @@ void parlor()
             string input2;
             cin >> input2;
 
-            while (input2 != "Y" || input2 != "N")
-            {
-              print_endl("Please enter either 'Y' or 'N'.");
-              cin >> input;
-            }
+            // while (input2 != "Y" || input2 != "N")
+            // {
+            //   print_endl("Please enter either 'Y' or 'N'.");
+            //   cin >> input;
+            // }
 
             if (input2 == "Y")
             {
