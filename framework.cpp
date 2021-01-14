@@ -104,6 +104,7 @@ void check(string correct_answer, string error_message)
     }
     if (input == "BAG"){
       bagCheck();
+      check(correct_answer, error_message);
     }
     else if (input != correct_answer)
     {
@@ -477,13 +478,13 @@ void parlor()
 
         string input;
         cin >> input;
-      
+
         while (input != "Y" || input != "N")
         {
           print_endl("Please enter either 'Y' or 'N'.");
           cin >> input;
         }
-      
+
         if (input == "Y")
         {
             print_endl("\nWhat is the inscription on the sphere goes in the spot labeled \"M\"? _ _ _ _ ");
@@ -502,13 +503,13 @@ void parlor()
 
             string input2;
             cin >> input2;
-          
+
             while (input2 != "Y" || input2 != "N")
             {
               print_endl("Please enter either 'Y' or 'N'.");
               cin >> input;
             }
-          
+
             if (input2 == "Y")
             {
                 ending();
@@ -526,7 +527,7 @@ void parlor()
             }
 
         }
-      
+
         else
         {
             print_endl("\nPlease go to a new room. This box cannot be opened without all three metal spheres.");
@@ -535,14 +536,14 @@ void parlor()
             room_selection(rooms, keys, SIZE);
         }
     }
-  
+
     else if (STATUS[5] == 2 && visited_all)
     {
         print_endl("\nNow that you have collected the clues from all the rooms, you may move on.");
         delay(2);
         ending();
     }
-  
+
     else if (STATUS[5] == 2 && visited_all == false)
     {
         print_endl("\nYou need clues from all the rooms to move on.");
