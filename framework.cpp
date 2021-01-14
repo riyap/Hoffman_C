@@ -103,7 +103,7 @@ void check(string correct_answer, string error_message)
 
 void welcome_message(string name)
 {
-    print_endl(" ");
+    cout << " " << endl;
     print_endl("Welcome, " + name + "!");
     print_endl("\nThe year is 1750, and you are at a castle party when all of a sudden, ");
     print_endl("the lights turn off and the doors are locked.");
@@ -150,8 +150,7 @@ void library()
         }
     }
     print_endl("You step into the library.");
-    print_endl("https://photos.app.goo.gl/7NyjXMBANhH5jLFM7");
-    delay(5);
+    delay(3);
     print_endl("Tacked to the door is a note with three hints: \n");
     delay(3);
 
@@ -163,7 +162,7 @@ void library()
     print_endl("   I die in darkness and the mouths of the dead, my chief purpose is to be read.");
     print_endl("   If my words you fail to heed, in your future you shall bleed.");
     print_endl("   What am I? \n");
-    delay(5);
+    delay(10);
 
     print_endl("You look up into the vast room.");
     print_endl("Over 4,000 books, they say? How are you supposed to find a clue in here? \n");
@@ -298,7 +297,6 @@ void office_wing()
         }
     }
     print_endl("The office wing is dimly lit, with various stationary scattered across the desks.");
-    print_endl("https://photos.app.goo.gl/F865pZvv2uTs9hbr6");
     print_endl("You take a few pencils, notepads, and paperclips just in case.");
     delay(7);
 
@@ -306,8 +304,7 @@ void office_wing()
     print_endl("You find a safe with a piece of parchment next to it. It lists the names of many European cities.");
     delay(4);
     print_endl("\nAn idea comes to you.");
-    print_endl("https://photos.app.goo.gl/jzAhqPvXz4mv9Q7j9");
-    delay(5);
+    delay(2);
     print_endl("\nYou try connecting the cities on the map, and the lines form a pattern. \nWhat combination will unlock the safe? Enter answer without spaces: _ _ _ ");
     check("427", "Please try again. \n What combination will unlock the safe? Enter answer without spaces:");
 
@@ -315,8 +312,7 @@ void office_wing()
     print_endl("You enter the combination into the safe.");
     delay(5);
     print_endl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal sphere, on which there is the inscription 'soul'.");
-    print_endl("https://photos.app.goo.gl/SFp5jXJCGxmSWLyC9");
-    delay(10);
+    delay(8);
     print_endl("You take note of the clue for this room.");
     delay(3);
 
@@ -353,22 +349,19 @@ void observatory()
     print_endl("Titan: Green");
     print_endl("Callisto: Green");
     delay(8);
-    print_endl("https://photos.app.goo.gl/cmFJ14W361od9HW56");
     print_endl("You look around the room. Where could the clue be hidden? In the _ _ _ _. ");
     check("safe", "You take a closer look, but you can't seem to find anything there.\nWhat else looks out of the ordinary?");
 
     //buttons puzzle
     print_endl("You take a closer look at the safe. There seem to be letters carved into the metal under three buttons.");
-    print_endl("https://photos.app.goo.gl/6mgPFqFrgnUp5Wgt9");
-    delay(5);
+    delay(3);
     //img
     delay(2);
     print_endl("In which order do you press the buttons? Enter colors separated by commas. _____,_____,_____");
     check("red,yellow,green", "Nothing happens. You try again, this time pressing in the order: ");
 
     print_endl("The safe opens and you find a piece of parchment with the letter “U” and a peculiar star-shaped key, with the inscription “dreams” on its side. \nThese seem to be the room’s clues.");
-    print_endl("https://photos.app.goo.gl/8WeKAGrBRgvrdonf9");
-    delay(8);
+    delay(5);
 
     // Running room_selection so that user can move on to the next room.
     //   remove("Observatory", rooms, size);
@@ -404,24 +397,20 @@ void gallery()
     print_endl("Interesting...");
     delay(1);
     //image
-    print_endl("https://photos.app.goo.gl/dXtNEDPUnAu4s6F48");
     print_endl("What in this room looks out of the ordinary? The _ _ _ _ _ _ _ _. ");
     check("envelope", "You check, but nothing is amiss. \nWhat else seems unusual, like it isn't supposed to be part of this room?\nThe _ _ _ _ _ _ _ _. ");
 
     //image
-    print_endl("https://photos.app.goo.gl/S5SMiepUoeBvhZck9");
     print_endl("These are all pictures of animals. Perhaps they can be arranged in a certain order to spell a word.");
     delay(2);
     print_endl("What does this clue spell? ");
     check("reagan", "That arrangement doesn't seem to make sense. Perhaps there's a better answer.");
     print_endl("You go to the portrait of Baroness Reagan. Slowly, You feel around the corners of the frame.");
-    print_endl("https://photos.app.goo.gl/RNCgtBWw5CogiU219");
     delay(3);
     print_endl("Giving a small tug, you stumble back as the frame swings open. There is a hidden storage behind the portrait.");
     delay(3);
     print_endl("In it is a piece of parchment with the letter \"U\" and a small metal sphere.");
-    print_endl("https://photos.app.goo.gl/qmAnG7CHzXfGvHPR8");
-    delay(4);
+    delay(1);
 
     //image
     delay(2);
@@ -451,11 +440,9 @@ void parlor()
     if (STATUS[5] == 0)
     {
         print_endl("You enter the parlor and take a look around.");
-        print_endl("https://photos.app.goo.gl/MwZ6UyD1DG16DvZN6");
         //image of parlor
         delay(2);
         print_endl("There's a strange chest on the floor...");
-        print_endl("https://photos.app.goo.gl/zPNbTaBVQNxTEuWM9");
         delay(2);
         //image of box
         print_endl("\nLooks like the three grooves labled \"M\", \"B\", and \"S\" need to be filled to open it.");
@@ -477,7 +464,6 @@ void parlor()
             print_endl("\n*CLICK!*");
             delay(2);
             print_endl("\nYou hear the box unlock. Inside you find a key and piece of parchment with the letter \"R\".");
-            print_endl("https://photos.app.goo.gl/wom2Ej8VbXsucKoUA");
             //image of open box
             delay(5);
             print_endl("Have you collected clues from all 6 locations on the map? Enter 'Y' or 'N': ");
@@ -537,7 +523,7 @@ void parlor()
                                           
 void room_selection(string next_rooms[], string room_keys[], int array_size)
 {
-    print_endl();
+    print_endl(" ");
     print_endl("Which room would you like to enter?");
     print_endl("(Type in a one or two-letter key.)");
     for (int i = 0; i < array_size; i++)
