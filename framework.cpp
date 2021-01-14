@@ -534,7 +534,7 @@ void parlor()
             //   cin >> input;
             // }
 
-            if (input2 == "Y")
+            if (input2 == "Y" && visited_all)
             {
                 ending();
             }
