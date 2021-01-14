@@ -159,10 +159,10 @@ void library()
     print_endl("2. Over the course of 50 years, this library has amassed 4,000 treasured volumes of literature in it.");
     delay(4);
     print_endl("3. I know the reigns of your Kings and Queens, trials of the poor and men I've seen.");
-    print_endl("I die in darkness and the mouths of the dead, my chief purpose is to be read.");
-    print_endl("If my words you fail to heed, in your future you shall bleed.");
-    print_endl("What am I? \n");
-    delay(10);
+    print_endl("   I die in darkness and the mouths of the dead, my chief purpose is to be read.");
+    print_endl("   If my words you fail to heed, in your future you shall bleed.");
+    print_endl("   What am I? \n");
+    delay(5);
 
     print_endl("You look up into the vast room.");
     print_endl("Over 4,000 books, they say? How are you supposed to find a clue in here? \n");
@@ -207,7 +207,7 @@ void library()
     delay(3);
 
     print_endl("You skim the room for any more clues, and since there’s no more,\nyou leave the library and head to your next location.");
-    delay(4);
+    delay(6);
     STATUS[0] = 1;
     // Removing library from the rooms array, l from the keys array, and doing size--
     // remove("Library", rooms, size);
@@ -230,7 +230,8 @@ void kitchen()
             room_selection(rooms, keys, SIZE);
         }
     }
-    //IMAGE: 2 boxes
+    //IMAGE: kitchen
+    print_endl("You enter the kitchen...what is that gross smell? Wrinkling your nose, you turn around and see some boxes.");
     print_endl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole.");
     print_endl("https://photos.app.goo.gl/SytFrk1gWpPcuJe8A");
     delay(5);
@@ -356,8 +357,8 @@ void observatory()
     delay(3);
     //img
     delay(2);
-    print_endl("In which order do you press the buttons? Enter colors separated by commas. _____, _____, _____ ");
-    check("red, yellow, green", "Nothing happens. You try again, this time pressing in the order: ");
+    print_endl("In which order do you press the buttons? Enter colors separated by commas. _____,_____,_____");
+    check("red,yellow,green", "Nothing happens. You try again, this time pressing in the order: ");
 
     print_endl("The safe opens and you find a piece of parchment with the letter “U” and a peculiar star-shaped key, with the inscription “dreams” on its side. \nThese seem to be the room’s clues.");
     delay(5);
@@ -522,6 +523,7 @@ void parlor()
                                           
 void room_selection(string next_rooms[], string room_keys[], int array_size)
 {
+    print_endl();
     print_endl("Which room would you like to enter?");
     print_endl("(Type in a one or two-letter key.)");
     for (int i = 0; i < array_size; i++)
