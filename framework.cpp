@@ -127,7 +127,7 @@ void welcome_message(string name)
     delay(3);
     print_endl("Throughout the game, certain items will be added to your bag, which you can view by entering \"bag\".");
     delay(3);
-    print_endl("If you can't answer a puzzle and want to come back to it later, just enter \"leave\" to exit the room.)");
+    print_endl("If you can't answer a puzzle and want to come back to it later, just enter \"leave\" to exit the room.");
     delay(4);
 }
 
@@ -166,7 +166,7 @@ void library()
     }
     print_endl("\nYou step into the library.");
     print_endl("https://photos.app.goo.gl/7NyjXMBANhH5jLFM7");
-    delay(10);
+    delay(8);
     print_endl("Tacked to the door is a note with three hints: \n");
     delay(3);
 
@@ -196,10 +196,10 @@ void library()
     print_endl("You pick up the book and flip through the pages, and a loose sheet of parchment falls out.");
     delay(4);
 
-
-    print_endl("But upon closer inspection, the paper seems to be blank.");
     print_endl("https://photos.app.goo.gl/7TAb3cpfBZmTBMFY9");
-    delay(10);
+    delay(6);
+    print_endl("But upon closer inspection, the paper seems to be blank.");
+    delay(3);
     print_endl("\nWhy are there no words on this paper? (one word)");
     print("The words are _ _ _ _ _ _ _ _ _. ");
 
@@ -216,9 +216,11 @@ void library()
     check("candle", "\nYou pick it up, but it doesn't seem to make a difference. Try something else. \nWhich of these would you like to try using? ");
 
     print_endl("\nYou pick up the candle, remembering the clue on the wall.");
-    print_endl("You hold the parchment over the flame, and slowly, the letter “T” appears. \n");
+    print_endl("You hold the parchment over the flame...\n");
     print_endl("https://photos.app.goo.gl/nwHEhXDB5VNtMTA59");
-    delay(10);
+    delay(6);
+    print_endl("... and slowly, the letter “T” appears.\n");
+    delay(3);
     print_endl("You’ve found a clue! Parchment with letter \"T\" added to bag.");
     delay(3);
     bag[bagStorage] = "Parchment with letter \"T\"";
@@ -249,9 +251,10 @@ void kitchen()
     }
     //IMAGE: kitchen
     print_endl("\nYou enter the kitchen...what is that gross smell? Wrinkling your nose, you turn around and see some boxes.");
-    print_endl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole.");
     print_endl("https://photos.app.goo.gl/SytFrk1gWpPcuJe8A \n");
-    delay(10);
+    delay(6);
+    print_endl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole.\n");
+    delay(5);
 
     //IMAGE 1st box only
     print_endl("Next to the first box is a riddle, saying:");
@@ -273,9 +276,10 @@ void kitchen()
     {
         print_endl("What is the inscription on the key? _ _ _ _ _ ");
         check("dreams", "Please try again. \n What is the inscription on the key? _ _ _ _ _ ");
-        print_endl("Looking inside both boxes, you take out a metal sphere with the inscription 'body' and a parchment paper with the letter 'F'.");
         print_endl("https://photos.app.goo.gl/UYTeF5Jnn1kv8Mxa9");
-        delay(10);
+        delay(6);
+        print_endl("Looking inside both boxes, you take out a metal sphere with the inscription 'body' and a parchment paper with the letter 'F'.");
+        delay(5);
         print_endl("These seem to be the clues for this room, so you decide to move on. \"body\" sphere and \"F\" parchment added to bag.");
         bag[bagStorage]="\"body\" sphere and \"F\" parchment";
         bagStorage++;
@@ -324,16 +328,17 @@ void office_wing()
     delay(4);
     print_endl("\nAn idea comes to you.");
     print_endl("https://photos.app.goo.gl/jzAhqPvXz4mv9Q7j9");
-    delay(10);
+    delay(6);
     print_endl("\nYou try connecting the cities on the map, and the lines form a pattern. \nWhat combination will unlock the safe? Enter answer without spaces: _ _ _ ");
     check("427", "Please try again. \n What combination will unlock the safe? Enter answer without spaces:");
 
     //insert image here
     print_endl("\nYou enter the combination into the safe.");
     delay(3);
-    print_endl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal sphere, on which there is the inscription 'soul'.");
     print_endl("https://photos.app.goo.gl/SFp5jXJCGxmSWLyC9");
-    delay(10);
+    delay(6);
+    print_endl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal sphere, on which there is the inscription 'soul'.");
+    delay(5);
     print_endl("You take note of the clue for this room. \"soul\" sphere and \"E\" parchment added to bag.");
     delay(3);
     bag[bagStorage] = "\"soul\" sphere and \"E\" parchment";
@@ -377,17 +382,20 @@ void observatory()
     check("safe", "You take a closer look, but you can't seem to find anything there.\nWhat else looks out of the ordinary?");
 
     //buttons puzzle
-    print_endl("\nYou take a closer look at the safe. There seem to be letters carved into the metal under three buttons.");
     print_endl("https://photos.app.goo.gl/6mgPFqFrgnUp5Wgt9");
-    delay(10);
+    delay(6);
+    print_endl("\nYou take a closer look at the safe. There seem to be letters carved into the metal under three buttons.");
+    delay(5);
     //img
-    delay(2);
     print_endl("In which order do you press the buttons? Enter colors separated by commas. _____,_____,_____");
     check("red,yellow,green", "Nothing happens. You try again, this time pressing in the order: ");
 
-    print_endl("The safe opens and you find a piece of parchment with the letter “U” and a peculiar star-shaped key, with the inscription “dreams” on its side. \nThese seem to be the room’s clues.\n\"dreams\" star-shaped key and \"U\" parchment added to bag.");
     print_endl("https://photos.app.goo.gl/8WeKAGrBRgvrdonf9");
-    delay(10);
+    delay(6);
+    print_endl("The safe opens and you find a piece of parchment with the letter “U” and a peculiar star-shaped key, with the inscription “dreams” on its side.");
+    delay(5);
+    print_endl("These seem to be the room’s clues.\n\"dreams\" star-shaped key and \"U\" parchment added to bag.");
+    delay(3);
     bag[bagStorage] = "\"dreams\" star-shaped key and \"U\" parchment";
     bagStorage++;
 
@@ -425,34 +433,35 @@ void gallery()
     print_endl("Interesting...");
     delay(3);
     //image
-    print_endl("What in this room looks out of the ordinary? The _ _ _ _ _ _ _ _. ");
     print_endl("https://photos.app.goo.gl/kr74mSXtLE3XXxyeA");
+    print_endl("What in this room looks out of the ordinary? The _ _ _ _ _ _ _ _. ");
     check("envelope", "You check, but nothing is amiss. \nWhat else seems unusual, like it isn't supposed to be part of this room?\nThe _ _ _ _ _ _ _ _. ");
 
     //image
     print_endl("\nhttps://photos.app.goo.gl/S5SMiepUoeBvhZck9");
-    delay(10);
+    delay(6);
     print_endl("These are all pictures of animals. Perhaps they can be arranged in a certain order to spell a word.");
-    delay(2);
+    delay(3);
     print_endl("What does this clue spell? ");
     check("reagan", "That arrangement doesn't seem to make sense. Perhaps there's a better answer. ");
-    print_endl("\nYou go to the portrait of Baroness Reagan. Slowly, You feel around the corners of the frame.");
     print_endl("https://photos.app.goo.gl/RNCgtBWw5CogiU219");
-    delay(10);
+    delay(16);
+    print_endl("\nYou go to the portrait of Baroness Reagan. Slowly, You feel around the corners of the frame.");
+    delay(4);
     print_endl("Giving a small tug, you stumble back as the frame swings open. There is a hidden storage behind the portrait.");
     delay(3);
-    print_endl("In it is a piece of parchment with the letter \"U\" and a small metal sphere.");
     print_endl("https://photos.app.goo.gl/qmAnG7CHzXfGvHPR8");
-    delay(10);
+    delay(6);
+    print_endl("In it is a piece of parchment with the letter \"U\" and a small metal sphere.");
+    delay(4);
 
     //image
-    delay(2);
     print_endl("Upon closer inspection, the metal sphere has the word \"mind\" inscribed into it.");
     delay(3);
     print_endl("Pocketing the sphere and paper, you check off the gallery on your map of the castle. This seems to be the room’s clue.");
     delay(4);
     print_endl("\"mind\" sphere and \"U\" parchment added to bag.");
-    delay(1);
+    delay(3);
     bag[bagStorage] = "\"mind\" sphere and \"U\" parchment";
     bagStorage++;
 
@@ -509,10 +518,11 @@ void parlor()
             //image of box with spheres
             print_endl("\n*CLICK!*");
             delay(1);
-            print_endl("\nYou hear the box unlock. Inside you find a key and piece of parchment with the letter \"R\".");
             print_endl("https://photos.app.goo.gl/Lh8LX5958Hu1yd6U9");
             //image of open box
-            delay(10);
+            delay(6);
+            print_endl("\nYou hear the box unlock. Inside you find a key and piece of parchment with the letter \"R\".");
+            delay(4);
             print_endl("Have you collected clues from all 6 locations on the map? Enter 'Y' or 'N': ");
 
             string input2;
