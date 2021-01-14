@@ -19,7 +19,7 @@ int bagStorage = 0;
 void bagCheck()
 {
   for(int i = 0; i < bagStorage; i++){
-    cout << i << ") " << bag[i] << endl;
+    cout << (i+1) << ") " << bag[i] << endl;
   }
 }
 
@@ -98,11 +98,11 @@ void check(string correct_answer, string error_message)
     string input;
     // cin >> lowercase(input);
     cin >> input; // TODO: handle capitalizations, etc.
-    if (input == "skip")
+    if (input == "leave")
     {
         room_selection(rooms, keys, SIZE);
     }
-    if (input == "BAG"){
+    if (input == "bag"){
       bagCheck();
       check(correct_answer, error_message);
     }
@@ -125,9 +125,9 @@ void welcome_message(string name)
     delay(3);
     print_endl("Make sure you enter all your answers in LOWERCASE (unless otherwise stated)! \n");
     delay(3);
-    print_endl("Throughout the game, certain items will be added to your bag, which you can view by entering \"BAG\".");
+    print_endl("Throughout the game, certain items will be added to your bag, which you can view by entering \"bag\".");
     delay(3);
-    print_endl("(If you can't answer a puzzle and want to come back to it later, just enter \"skip\" to go to a new room.)");
+    print_endl("If you can't answer a puzzle and want to come back to it later, just enter \"leave\" to exit the room.)");
     delay(4);
 }
 
