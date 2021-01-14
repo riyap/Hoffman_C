@@ -14,6 +14,15 @@ int STATUS[6] = {0, 0, 0, 0, 0, 0};
 
 void room_selection(string next_rooms[], string room_keys[], int array_size);
 
+string bag[20];
+int bagStorage = 0;
+void bagCheck()
+{
+  for(int i = 0; i < bagStorage; i++){
+    cout << i << ") " << bag[i] << endl;
+  }
+}
+
 // Function that delays the execution of the next line of code by a given number of seconds
 void delay(int seconds)
 {
@@ -93,6 +102,9 @@ void check(string correct_answer, string error_message)
     {
         room_selection(rooms, keys, SIZE);
     }
+    if (input == "BAG"){
+      bagCheck();
+    }
     else if (input != correct_answer)
     {
         print(error_message);
@@ -111,6 +123,8 @@ void welcome_message(string name)
     print_endl("You have one hour to find the exit and escape with your life! \n");
     delay(3);
     print_endl("Make sure you enter all your answers in LOWERCASE (unless otherwise stated)! \n");
+    delay(3);
+    print_endl("Throughout the game, certain items will be added to your bag, which you can view by entering \"BAG\".");
     delay(3);
     print_endl("(If you can't answer a puzzle and want to come back to it later, just enter \"skip\" to go to a new room.)");
     delay(4);
@@ -203,9 +217,10 @@ void library()
     print_endl("You hold the parchment over the flame, and slowly, the letter “T” appears. \n");
     print_endl("https://photos.app.goo.gl/nwHEhXDB5VNtMTA59");
     delay(4);
-    print_endl("You’ve found a clue!");
+    print_endl("You’ve found a clue! Parchment with letter \"T\" added to bag.");
     delay(3);
-
+    bag[bagStorage] = "Parchment with letter \"T\"";
+    bagStorage++;
     print_endl("You skim the room for any more clues, and since there’s no more,\nyou leave the library and head to your next location.");
     delay(6);
     STATUS[0] = 1;
@@ -260,7 +275,9 @@ void kitchen()
         print_endl("Looking inside both boxes, you take out a metal sphere with the inscription 'body' and a parchment paper with the letter 'F'.");
         print_endl("https://photos.app.goo.gl/UYTeF5Jnn1kv8Mxa9");
         delay(6);
-        print_endl("These seem to be the clues for this room, so you decide to move on.");
+        print_endl("These seem to be the clues for this room, so you decide to move on. \"body\" sphere and \"F\" parchment added to bag.");
+        bag[bagStorage]="\"body\" sphere and \"F\" parchment";
+        bagStorage++;
         // Removing library from the rooms array, l from the keys array, and doing size--
         // remove("Kitchen", rooms, size);
         // remove("k", keys, size);
@@ -313,8 +330,10 @@ void office_wing()
     delay(5);
     print_endl("It clicks open and you reach in and pull out a piece of parchment paper with the letter “E” on it and a metal sphere, on which there is the inscription 'soul'.");
     delay(8);
-    print_endl("You take note of the clue for this room.");
+    print_endl("You take note of the clue for this room. \"soul\" sphere and \"E\" parchment added to bag.");
     delay(3);
+    bag[bagStorage] = "\"soul\" sphere and \"E\" parchment";
+    bagStorage++;
 
     // Removing library from the rooms array, l from the keys array, and doing size--
     // remove("Office Wing", rooms, size);
@@ -360,8 +379,10 @@ void observatory()
     print_endl("In which order do you press the buttons? Enter colors separated by commas. _____,_____,_____");
     check("red,yellow,green", "Nothing happens. You try again, this time pressing in the order: ");
 
-    print_endl("The safe opens and you find a piece of parchment with the letter “U” and a peculiar star-shaped key, with the inscription “dreams” on its side. \nThese seem to be the room’s clues.");
+    print_endl("The safe opens and you find a piece of parchment with the letter “U” and a peculiar star-shaped key, with the inscription “dreams” on its side. \nThese seem to be the room’s clues.\n\"dreams\" star-shaped key and \"U\" parchment added to bag.");
     delay(5);
+    bag[bagStorage] = "\"dreams\" star-shaped key and \"U\" parchment";
+    bagStorage++;
 
     // Running room_selection so that user can move on to the next room.
     //   remove("Observatory", rooms, size);
@@ -418,6 +439,10 @@ void gallery()
     delay(2);
     print_endl("Pocketing the sphere and paper, you check off the gallery on your map of the castle. This seems to be the room’s clue.");
     delay(2);
+    print_endl("\"mind\" sphere and \"U\" parchment added to bag.")
+    delay(1);
+    bag[bagStorage] = "\"mind\" sphere and \"U\" parchment";
+    bagStorage++;
 
     // Running room_selection so that user can move on to the next room.
     // remove("Gallery", rooms, size);
@@ -449,7 +474,7 @@ void parlor()
         print_endl("\nWhat can be used to open the box? \n(Hint: what have you been collecting from the rooms you visited?)\nInstead of a space, split the two words with a '-': _ _ _ _ _-_ _ _ _ _ _ _ ");
         check("metal-spheres", "No, that doesn't seem to make sense. Try again.\nWhat can be used to open the box? _ _ _ _ _ -_ _ _ _ _ _ _ ");
         print_endl("\nDo you have the three metal spheres required to open this box? Enter 'Y' or 'N': ");
-        
+
         string input;
         cin >> input;
         if (input == "Y")
@@ -467,14 +492,14 @@ void parlor()
             //image of open box
             delay(5);
             print_endl("Have you collected clues from all 6 locations on the map? Enter 'Y' or 'N': ");
-            
+
             string input2;
             cin >> input2;
             if (input2 == "Y")
             {
                 ending();
             }
-            
+
             else if (input2 == "N")
             {
                 print_endl("\nYou need clues from all the rooms to move on.");
@@ -488,8 +513,8 @@ void parlor()
             else
             {
                 print_endl("Please enter either 'Y' or 'N'.");
-            }    
-        
+            }
+
         }
         else if (input == "N")
         {
@@ -501,7 +526,7 @@ void parlor()
         else
         {
             print_endl("Please enter either 'Y' or 'N'.");
-        }   
+        }
     }
     else if (STATUS[5] == 2 && visited_all)
     {
@@ -518,9 +543,9 @@ void parlor()
         // Running room_selection so that user can move on to the next room.
         room_selection(rooms, keys, SIZE);
     }
-    
+
 }
-                                          
+
 void room_selection(string next_rooms[], string room_keys[], int array_size)
 {
     print_endl(" ");
