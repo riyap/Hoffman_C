@@ -103,7 +103,7 @@ void check(string correct_answer, string error_message)
 
 void welcome_message(string name)
 {
-    print_endl("");
+    print_endl(" ");
     print_endl("Welcome, " + name + "!");
     print_endl("\nThe year is 1750, and you are at a castle party when all of a sudden, ");
     print_endl("the lights turn off and the doors are locked.");
