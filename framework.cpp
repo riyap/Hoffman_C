@@ -477,6 +477,13 @@ void parlor()
 
         string input;
         cin >> input;
+      
+        while (input != "Y" || input != "N")
+        {
+          print_endl("Please enter either 'Y' or 'N'.");
+          cin >> input;
+        }
+      
         if (input == "Y")
         {
             print_endl("\nWhat is the inscription on the sphere goes in the spot labeled \"M\"? _ _ _ _ ");
@@ -495,12 +502,19 @@ void parlor()
 
             string input2;
             cin >> input2;
+          
+            while (input2 != "Y" || input2 != "N")
+            {
+              print_endl("Please enter either 'Y' or 'N'.");
+              cin >> input;
+            }
+          
             if (input2 == "Y")
             {
                 ending();
             }
 
-            else if (input2 == "N")
+            else
             {
                 print_endl("\nYou need clues from all the rooms to move on.");
                 delay(2);
@@ -510,30 +524,25 @@ void parlor()
                 // Running room_selection so that user can move on to the next room.
                 room_selection(rooms, keys, SIZE);
             }
-            else
-            {
-                print_endl("Please enter either 'Y' or 'N'.");
-            }
 
         }
-        else if (input == "N")
+      
+        else
         {
             print_endl("\nPlease go to a new room. This box cannot be opened without all three metal spheres.");
             delay(3);
             // Running room_selection so that user can move on to the next room.
             room_selection(rooms, keys, SIZE);
         }
-        else
-        {
-            print_endl("Please enter either 'Y' or 'N'.");
-        }
     }
+  
     else if (STATUS[5] == 2 && visited_all)
     {
         print_endl("\nNow that you have collected the clues from all the rooms, you may move on.");
         delay(2);
         ending();
     }
+  
     else if (STATUS[5] == 2 && visited_all == false)
     {
         print_endl("\nYou need clues from all the rooms to move on.");
