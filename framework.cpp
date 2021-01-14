@@ -180,7 +180,9 @@ void library()
     print_endl("You pick up the book and flip through the pages, and a loose sheet of parchment falls out.");
     delay(4);
 
+
     print_endl("But upon closer inspection, the paper seems to be blank.");
+    print_endl("https://photos.app.goo.gl/7TAb3cpfBZmTBMFY9");
     delay(3);
     print_endl("\nWhy are there no words on this paper? (one word)");
     print("The words are _ _ _ _ _ _ _ _ _. ");
@@ -199,6 +201,7 @@ void library()
 
     print_endl("\nYou pick up the candle, remembering the clue on the wall.");
     print_endl("You hold the parchment over the flame, and slowly, the letter “T” appears. \n");
+    print_endl("https://photos.app.goo.gl/nwHEhXDB5VNtMTA59");
     delay(4);
     print_endl("You’ve found a clue!");
     delay(3);
@@ -229,6 +232,7 @@ void kitchen()
     }
     //IMAGE: 2 boxes
     print_endl("One box seems to have a puzzle on it, and the other box has nothing remarkable, save a star-shaped key-hole.");
+    print_endl("https://photos.app.goo.gl/SytFrk1gWpPcuJe8A");
     delay(5);
 
     //IMAGE 1st box only
@@ -238,7 +242,7 @@ void kitchen()
     delay(6);
     print_endl("What is the answer to the riddle? _ _ _ _ ");
     check("rose", "Please try again. \n What does this puzzle say once completed? _ _ _ _ ");
-    print_endl("You rotate the dials on the box to spell out \"rose\", and the lid clicks open.");
+    print_endl("You place the scrambled parts of the puzzle to spell out \"rose\", and the lid clicks open.");
     delay(4);
 
     //IMAGE 2nd box only
@@ -253,6 +257,7 @@ void kitchen()
         print_endl("What is the inscription on the key? _ _ _ _ _ ");
         check("dreams", "Please try again. \n What is the inscription on the key? _ _ _ _ _ ");
         print_endl("Looking inside both boxes, you take out a metal sphere with the inscription 'body' and a parchment paper with the letter 'F'.");
+        print_endl("https://photos.app.goo.gl/UYTeF5Jnn1kv8Mxa9");
         delay(6);
         print_endl("These seem to be the clues for this room, so you decide to move on.");
         // Removing library from the rooms array, l from the keys array, and doing size--
